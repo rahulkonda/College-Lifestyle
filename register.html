@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="green">
+<script type="text/javascript"> 
+function checkForm(form) { 
+if(form.username.value == "") { 
+alert("Error: Username cannot be blank!");
+form.username.focus();
+return false; 
+}
+re = /^\w+$/; 
+if(!re.test(form.username.value)) { 
+alert("Error: Username must contain only letters, numbers and underscores!"); 
+form.username.focus(); 
+return false; 
+} 
+if(form.password1.value != "" && form.password1.value == form.password2.value) 
+{ 
+if(form.password1.value.length < 6) 
+{ 
+alert("Error: Password must contain at least six characters!"); 
+form.password1.focus(); 
+return false; 
+} 
+if(form.password1.value == form.username.value) 
+{ 
+alert("Error: Password must be different from Username!"); 
+form.password1.focus(); 
+return false; 
+} 
+re = /[0-9]/; 
+if(!re.test(form.password1.value)) 
+{ 
+alert("Error: password must contain at least one number (0-9)!"); 
+form.password1.focus(); 
+return false; 
+} 
+re = /[a-z]/; 
+if(!re.test(form.password1.value)) 
+{ 
+alert("Error: password must contain at least one lowercase letter (a-z)!"); 
+form.password1.focus(); 
+return false; 
+} 
+re = /[A-Z]/; 
+if(!re.test(form.password1.value)) 
+{ 
+alert("Error: password must contain at least one uppercase letter (A-Z)!"); 
+form.password1.focus(); 
+return false; 
+} 
+} 
+else 
+{ 
+alert("Error: Please check that you've entered and confirmed your password!"); 
+form.password1.focus(); 
+return false; 
+} 
+} 
+</script> 
+
+<form onsubmit="return checkForm(this);" name="registrationform" action="Registration" method="get">
+<!-- FORM ACTION="mypage.html" METHOD="POST"-->
+<FONT COLOR="WHITE" SIZE="6">
+               <MARQUEE DIRECTION="LEFT" SCROLLDELAY="100" WIDTH="100%">NEW USERS PLEASE REGISTER HERE</MARQUEE> 
+         </FONT>
+         <FONT COLOR="white" SIZE="4"><i><p ALIGN="CENTER">(* Fields are Mandatory)</i></p></FONT>
+         
+           <TABLE ALIGN="CENTER">
+             <TR>
+                     <FONT COLOR="white" SIZE="6"></FONT>
+                     <TH ALIGN="CENTER" COLSPAN=2><FONT COLOR="white" SIZE=5/><U>PERSONAL INFORMATION</U><br><br></TH>
+             </TR>
+             <TR>
+                     <TH ALIGN="LEFT">FIRST NAME:</TH>
+                     <TD><INPUT TYPE="TEXT" MAX SIZE="30" name="fname">(*)</TD>
+             </TR>
+             <TR>
+                     <TH ALIGN="LEFT">LAST NAME:</TH>
+                     <TD><INPUT TYPE="TEXT" MAX SIZE="30" name="lname"></TD>
+             </TR>
+             <TR>   
+                     <TH ALIGN="LEFT">GENDER:</TH>
+                     <TD><input type="radio" name="sex" value="male">Male<br>
+<input type="radio" name="sex" value="female">Female
+                     </TD>
+             </TR>
+      <TR>
+          <TH ALIGN="LEFT">DATE OF BIRTH:</TH>
+          <TD>
+              <SELECT>
+                      <OPTION VALUE=0>DAY</OPTION> 
+                      <OPTION VALUE=1>1</OPTION>   
+                      <OPTION VALUE=2>2</OPTION>   
+                      <OPTION VALUE=3>3</OPTION>   
+                      <OPTION VALUE=4>4</OPTION>   
+                      <OPTION VALUE=5>5</OPTION>  
+                      <OPTION VALUE=6>6</OPTION>   
+                      <OPTION VALUE=7>7</OPTION>   
+                      <OPTION VALUE=8>8</OPTION>   
+                      <OPTION VALUE=9>9</OPTION>   
+                      <OPTION VALUE=10>10</OPTION>   
+                      <OPTION VALUE=11>11</OPTION>   
+                      <OPTION VALUE=12>12</OPTION>  
+                      <OPTION VALUE=13>13</OPTION>   
+                      <OPTION VALUE=14>14</OPTION>
+                      <OPTION VALUE=15>15</OPTION>   
+                      <OPTION VALUE=16>16</OPTION>   
+                      <OPTION VALUE=17>17</OPTION>   
+                      <OPTION VALUE=18>18</OPTION>   
+                      <OPTION VALUE=19>19</OPTION>  
+                      <OPTION VALUE=20>20</OPTION>   
+                      <OPTION VALUE=21>21</OPTION>
+                      <OPTION VALUE=22>22</OPTION>   
+                      <OPTION VALUE=23>23</OPTION>   
+                      <OPTION VALUE=24>24</OPTION>
+                      <OPTION VALUE=25>25</OPTION>   
+                      <OPTION VALUE=26>26</OPTION>   
+                      <OPTION VALUE=27>27</OPTION>   
+                      <OPTION VALUE=28>28</OPTION>   
+                      <OPTION VALUE=29>29</OPTION>  
+                      <OPTION VALUE=30>30</OPTION>   
+                      <OPTION VALUE=31>31</OPTION>
+              </SELECT>
+              <SELECT>
+     <OPTION VALUE=0>MONTH</OPTION> 
+     <OPTION VALUE=JAN>JAN</OPTION>   
+     <OPTION VALUE=FEB>FEB</OPTION>   
+     <OPTION VALUE=MAR>3</OPTION>   
+     <OPTION VALUE=APR>4</OPTION>   
+     <OPTION VALUE=MAY>5</OPTION>  
+     <OPTION VALUE=JUN>6</OPTION>   
+     <OPTION VALUE=JUL>7</OPTION>   
+     <OPTION VALUE=AUG>8</OPTION>   
+     <OPTION VALUE=SEP>9</OPTION>   
+     <OPTION VALUE=OCT>10</OPTION>   
+     <OPTION VALUE=NOV>11</OPTION>   
+     <OPTION VALUE=DEC>12</OPTION>  
+   </SELECT>
+   <SELECT>
+     <OPTION VALUE=0>YEAR</OPTION> 
+     <OPTION VALUE=1985>1985</OPTION>   
+     <OPTION VALUE=1986>1986</OPTION>   
+     <OPTION VALUE=1987>1987</OPTION>   
+     <OPTION VALUE=1988>1988</OPTION>   
+     <OPTION VALUE=1989>1989</OPTION>  
+     <OPTION VALUE=1990>1990</OPTION>   
+     <OPTION VALUE=1991>1991</OPTION>   
+     <OPTION VALUE=1992>1992</OPTION>   
+     <OPTION VALUE=1993>1993</OPTION>   
+     <OPTION VALUE=1994>1994</OPTION>   
+     <OPTION VALUE=1995>1995</OPTION>   
+     <OPTION VALUE=1996>1996</OPTION> 
+     <OPTION VALUE=1997>1997</OPTION>   
+     <OPTION VALUE=1998>1998</OPTION>   
+     <OPTION VALUE=1999>1999</OPTION>   
+     <OPTION VALUE=2000>2000</OPTION>   
+     <OPTION VALUE=2001>2001</OPTION>
+     <OPTION VALUE=2002>2002</OPTION>  
+     <OPTION VALUE=2003>2003</OPTION>   
+     <OPTION VALUE=2004>2004</OPTION>
+     <OPTION VALUE=2005>2005</OPTION>   
+     <OPTION VALUE=2006>2006</OPTION> 
+     <OPTION VALUE=2007>2007</OPTION>   
+     <OPTION VALUE=2008>2008</OPTION>
+     <OPTION VALUE=2009>2009</OPTION>   
+     <OPTION VALUE=2010>2010</OPTION>
+     <OPTION VALUE=2011>2011</OPTION>   
+   </SELECT>(*)
+   </TD>
+   </TR>
+   
+   
+ 
+  <TR>
+  <FONT COLOR="white" SIZE="6"/>
+  <TH ALIGN="CENTER" COLSPAN=2><FONT COLOR="RED" SIZE=5/><U>CONTACT INFORMATION</U></TH>
+  </TR>
+  <TR>
+  <TH ALIGN="LEFT">E-MAIL:</TH>
+  <TD><INPUT TYPE="TEXT" MAX SIZE="30" name="emailid">(*)</TD>
+  </TR>
+  <TR>
+   <TH ALIGN="LEFT">MOBILE:</TH>
+   <TD><INPUT TYPE="TEXT" name="mobno">(*)</TD>
+  </TR>
+  <TR>
+  <TH ALIGN="LEFT">ADDRESS:</TH>
+  <TD><TEXTAREA ROWS=5" COLS="20" name="address"></TEXTAREA></TD>
+  </TR>
+  
+  <TR>
+     <TH ALIGN="CENTER" COLSPAN=2><FONT COLOR="RED" SIZE=5/><U>ACCOUNT INFORMATION</U></TD>
+  </TR>
+  <TR>
+   <TH ALIGN="LEFT">USERNAME:</TH>
+   <TD><INPUT TYPE="TEXT" name="username">(ALPHA NUMERICS ONLY)(*)</TD>
+  </TR>
+  <TR>
+   <TH ALIGN="LEFT">PASSWORD:</TH>
+   <TD><INPUT TYPE="PASSWORD" name="password1">(MIN 6 CHARACTERS)(*)</TD>
+  </TR>
+  <TR>
+   <TH ALIGN="LEFT">CONFIRM PASSWORD:(*)</TH>
+   <TD><INPUT TYPE="PASSWORD" name="password2"></TD>
+  </TR>
+  </TABLE>
+  <FONT COLOR="white" SIZE="4"/><P ALIGN="CENTER"><INPUT TYPE="CHECKBOX">I AGREE TO THE TERMS AND CONDITIONS</P>
+  <TABLE ALIGN="CENTER">
+  <TR>
+  <TD ALIGN="RIGHT"><INPUT TYPE="SUBMIT" VALUE="SUBMIT"></TD>
+  <TD ALIGN="LEFT"><INPUT TYPE="RESET" VALUE="RESET"></TD> 
+  </TR>
+  </TABLE>
+</form>
+
+</body>
+</html>
